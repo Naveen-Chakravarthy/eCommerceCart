@@ -1,0 +1,54 @@
+<h2>These are the items in our current inventory</h2>
+<div class="col">
+  <button type="button" class="btn btn-primary">
+    <a href="/test/showcart" style="color:white;">Cart (<span class="total-count"></span>)</a></button>
+  <button class="clear-cart btn btn-danger">Clear Cart</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="table-responsive">
+          <table summary="This table shows how to create responsive tables using Bootstrap's default functionality"
+            class="table table-bordered table-hover">
+            <caption class="text-center">E-Commerce Items :</caption>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th class="col-xs-2">Add to cart</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>30</td>
+                <td><a href="#" data-name="A" data-price="30.0" class="add-to-cart btn btn-primary">Add to cart</a></td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td>20</td>
+                <td><a href="#" data-name="B" data-price="20.0" class="add-to-cart btn btn-primary">Add to cart</a></td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>15</td>
+                <td><a href="#" data-name="C" data-price="15.0" class="add-to-cart btn btn-primary">Add to cart</a></td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>50</td>
+                <td><a href="#" data-name="D" data-price="50.0" class="add-to-cart btn btn-primary">Add to cart</a></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5" class="text-center">Prices are also subjected to discount.</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!--end of .table-responsive-->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cartScript.js"></script>
