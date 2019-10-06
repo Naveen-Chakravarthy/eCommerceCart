@@ -1,0 +1,64 @@
+<h2>Change values and update to change in DB</h2>
+<script>
+  let disc = <%- JSON.stringify(discounts)%>;
+  if(disc)
+  {
+    discounts = JSON.parse(disc);
+  }
+  console.log(discounts);</script>
+<div class="col">
+   <button class="update-cart btn btn-danger">Update</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="table-responsive">
+          <table summary="This table shows how to create responsive tables using Bootstrap's default functionality"
+            class="table table-bordered table-hover">
+            <caption class="text-center">E-Commerce Items :</caption>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Count</th>
+                <th class="col-xs-2">Discount Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td><input type="number" min="0" class="price-value" data-original-item="A" step="5" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="count-value" data-original-item="A" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="discount-value" data-original-item="A" step="5" placeholder="multiples of 5"  ></td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td><input type="number" min="0" class="price-value" data-original-item="B" step="5" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="count-value" data-original-item="B" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="discount-value" data-original-item="B" step="5" placeholder="multiples of 5" ></td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td><input type="number" min="0" class="price-value" data-original-item="C" step="5" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="count-value" data-original-item="C" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="discount-value" data-original-item="C" step="5" placeholder="multiples of 5" ></td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td><input type="number" min="0" class="price-value" data-original-item="D" step="5" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="count-value" data-original-item="D" placeholder="multiples of 5" ></td>
+                <td><input type="number" min="0" class="discount-value" data-original-item="D" step="5" placeholder="multiples of 5" ></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5" class="text-center">After finishing click update.</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!--end of .table-responsive-->
+      </div>
+    </div>
+  </div>
+
+  <script src="/test/js/updateToDB.js"></script>
