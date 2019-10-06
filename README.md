@@ -10,7 +10,12 @@ Requirements given TODO:
 * Test case for discount - Basic done (No SQL support)
 
 Added NODE_ENV development/Release support. This is done using dotenv.
-Default is development build. This is debug mode. Made debug as default because we need to setup mysql server before running this. If you don't want to setup mysql, by default it will take fixed discount values instead of taking from DB.
+Default is Release build. Have to setup mysql server before running this.
+If you don't want to setup mysql, create a file named '.env' and put the following lines in it.
+```
+NODE_ENV=development
+```
+This will run in debug mode. It will take default discount values instead of DB, and parse. So it will also not update to DB.
 
 ### Prerequisites
 
@@ -19,9 +24,9 @@ We need node and npm installed before starting this.
 Then we need to setup mysql server and create a database called 'ecommercecart' and in it, we need to create a table named 'products'.
 products table must have fields 'item'(varchar(50)), 'price'(int), 'count'(int) and 'discount'(int).
 
-If the database is setup and configured as above, then open '.env' file and change NODE_ENV to release.
+If the database is not setup and configured as above, then open '.env' file and change NODE_ENV to development.
 ```
-NODE_ENV=release
+NODE_ENV=development
 ```
 
 ### Installing
