@@ -47,7 +47,7 @@ http://localhost:4050/test/
 
 ```
 npm install mocha -g
-mocha test/test.js
+mocha test/test.js OR npm test
 ```
 
 ## Built With
