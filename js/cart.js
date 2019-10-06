@@ -1,3 +1,8 @@
+if(typeof exports === 'undefined'){ 
+  var exports = this['cart'] = {}; 
+} 
+  
+
 var shoppingCart = (function () {
   // =============================
   // Private methods and propeties
@@ -18,7 +23,7 @@ var shoppingCart = (function () {
 
   // Load cart
   function loadCart() {
-    if (cartInitialized) {
+    if (typeof cartInitialized !== 'undefined') {
       cart = JSON.parse(cartInitialized);
       //console.log(cart);
       //console.log('Getting from cartinitialized');
@@ -105,7 +110,7 @@ var shoppingCart = (function () {
   obj.totalCart = function () {
     let totalCart = 0;
     for (var item in cart) {
-      totalCart += Number(this.getTotalPriceAfterDiscount(cart[item].name, cart[item].count, cart[item].price));
+      totalCart += Number(exports.getTotalPriceAfterDiscount(cart[item].name, cart[item].count, cart[item].price));
     }
     if (totalCart >= 150)
       totalCart -= 20;
@@ -122,34 +127,13 @@ var shoppingCart = (function () {
         itemCopy[p] = item[p];
 
       }
-      itemCopy.total = this.getTotalPriceAfterDiscount(item.name, item.count, item.price);
+      itemCopy.total = exports.getTotalPriceAfterDiscount(item.name, item.count, item.price);
       cartCopy.push(itemCopy)
     }
     return cartCopy;
   }
 
-  // Get discounted price
-  obj.getTotalPriceAfterDiscount = function (item, count, price) {
-
-    if (discounts) {
-      //console.log('discounts found');
-      //console.log(discounts);
-      if (discounts[item]) {
-        if (discounts[item].count <= count) {
-          return Number((price * count) - discounts[item].discount).toFixed(2);
-        }
-        else {
-          return Number(price * count).toFixed(2);
-        }
-      }
-      else {
-        return Number(price * count).toFixed(2);
-      }
-    }
-    else {
-      return Number(price * count).toFixed(2);
-    }
-  }
+  
 
   // cart : Array
   // Item : Object/Class
@@ -164,3 +148,27 @@ var shoppingCart = (function () {
   // loadCart : Function
   return obj;
 })();
+
+
+// Get discounted price
+exports.getTotalPriceAfterDiscount = function(item, count, price) {
+
+  if (typeof discounts !== 'undefined') {
+    //console.log('discounts found');
+    //console.log(discounts);
+    if (discounts[item]) {
+      if (discounts[item].count <= count) {
+        return Number((price * count) - discounts[item].discount).toFixed(2);
+      }
+      else {
+        return Number(price * count).toFixed(2);
+      }
+    }
+    else {
+      return Number(price * count).toFixed(2);
+    }
+  }
+  else {
+    return Number(price * count).toFixed(2);
+  }
+}
