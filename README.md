@@ -2,6 +2,13 @@
 
 This is created for a coding challenge. Nothing complicated here!
 
+### Latest Update
+Requirements given TODO:
+* Remove Session Storage and add SQL support - Done
+* Make Discounts Configurable - Done
+* Seperate functions into its own class - Done
+* Test case for discount - Yet to do
+
 ### Prerequisites
 
 We need node and npm installed before starting this.
