@@ -4,7 +4,7 @@
   "description": "Sample eCommerce site for coding challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/test.js"
   },
   "author": "Naveen",
   "license": "ISC",
