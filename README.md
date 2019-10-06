@@ -7,7 +7,7 @@ Requirements given TODO:
 * Remove Session Storage and add SQL support - Done
 * Make Discounts Configurable - Done
 * Seperate functions into its own class - Done
-* Test case for discount - Yet to do
+* Test case for discount - Basic done (No SQL support)
 
 Added NODE_ENV development/Release support. This is done using dotenv.
 Default is development build. This is debug mode. Made debug as default because we need to setup mysql server before running this. If you don't want to setup mysql, by default it will take fixed discount values instead of taking from DB.
@@ -40,7 +40,10 @@ http://localhost:4050/test/
 
 ## Running the tests
 
-Currently have not put any tests
+```
+npm install mocha -g
+mocha test/test.js
+```
 
 ## Built With
 
