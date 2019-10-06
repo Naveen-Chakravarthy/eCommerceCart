@@ -8,7 +8,7 @@ var showcartHandler = require('./handler/showcartHandler.js');
 var app = express();
 let debug = false;
 
-const connection = new mysql.Connection('localhost', 'naveen', 'jYo34xweTYMZj_qCv', 'celcius_wa_genericutil');
+const connection = new mysql.Connection('localhost', 'naveen', 'qwerty_123', 'ecommercecart');
 const dotenv = require('dotenv');
 dotenv.config();
 if (process.env.NODE_ENV) {
